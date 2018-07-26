@@ -44,7 +44,13 @@
       },
       {
         "path": "@semantic-release/github",
-        "assets": "dist/**"
+        "assets": [{
+          "path": "dist/*.{zip}",
+          "label": "Production Zip"
+        }, {
+          "path": "dist/*.{tgz}",
+          "label": "Production Tarball"
+        }]
       }
     ]
   },
