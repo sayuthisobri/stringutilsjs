@@ -38,7 +38,7 @@
     "commitmsg": "validate-commit-msg"
   },
   "release": {
-    "success": [{
+    "publish": [{
       "path": "@semantic-release/github",
       "assets": [{
           "path": ["dist/**", "package.json", "*.md"],
