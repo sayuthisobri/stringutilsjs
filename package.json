@@ -38,21 +38,20 @@
     "commitmsg": "validate-commit-msg"
   },
   "release": {
-    "publish": [{
-        "path": "@semantic-release/npm",
-        "tarballDir": "dist"
-      },
+    "publish": ["@semantic-release/npm",
       {
-        "path": "@semantic-release/github",
-        "assets": [{
-          "path": "dist/*.{zip}",
-          "label": "Production Zip"
-        }, {
-          "path": "dist/*.{tgz}",
-          "label": "Production Tarball"
-        }]
+        "path": "@semantic-release/github"
       }
-    ]
+    ],
+    "npmPublish": false,
+    "tarballDir": "dist",
+    "assets": [{
+      "path": "dist/*.zip",
+      "label": "Production Zip"
+    }, {
+      "path": "dist/*.tgz",
+      "label": "Production Tarball"
+    }]
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
