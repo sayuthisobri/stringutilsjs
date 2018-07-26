@@ -39,17 +39,14 @@
   },
   "release": {
     "publish": [{
-      "path": "@semantic-release/github",
-      "assets": [{
-          "path": ["dist/**", "package.json", "*.md"],
-          "label": "Production files"
-        },
-        {
-          "path": ["**", "!dist/", "!docs/", "!coverage/", "!.rpt*/", "!node*/"],
-          "label": "Source files"
-        }
-      ]
-    }]
+        "path": "@semantic-release/npm",
+        "tarballDir": "dist"
+      },
+      {
+        "path": "@semantic-release/github",
+        "assets": "dist/**"
+      }
+    ]
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
