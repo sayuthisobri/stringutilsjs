@@ -9,7 +9,7 @@ export default class StringUtils {
     const alpha = options.customCharacters || 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     const lAlpha = alpha.toLowerCase()
     const numeric = [...new Array(10).keys()].map(x => `${x}`)
-    const symbols = options.customSymbols ? options.customSymbols : '!~$[]{}()<>.'
+    const symbols = options.customSymbols ? options.customSymbols : `!~$[]{}()<>.`
     const availableChars: string[] = []
     availableChars.push(...alpha.split(''))
     if (!options.excludeLowercase) availableChars.push(...lAlpha.split(''))
