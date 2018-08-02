@@ -21,9 +21,9 @@
   },
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist prod",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "pack": "npm-pack-zip --dst dist",
+    "pack": "make-dir prod && npm-pack-zip --dst prod",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -45,14 +45,14 @@
         "path": "@semantic-release/github"
       }
     ],
-    "tarballDir": "dist",
+    "tarballDir": "prod",
     "assets": [{
-        "path": "dist/*.zip",
-        "label": "Production Zip"
+        "path": "prod/*.zip",
+        "label": "Production (zip)"
       },
       {
-        "path": "dist/*.tgz",
-        "label": "Production Tarball"
+        "path": "prod/*.tgz",
+        "label": "Production (tar.gz)"
       }
     ]
   },
@@ -111,6 +111,7 @@
     "jest": "^22.0.2",
     "lint-staged": "^7.1.3",
     "lodash.camelcase": "^4.3.0",
+    "make-dir-cli": "^1.0.0",
     "npm-pack-zip": "^1.2.6",
     "prettier": "^1.13.4",
     "prompt": "^1.0.0",
